@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Variables
+
+LIST=$(cat extensions)
+TRIM=$(tr "\t" "\n" < extensions)
+
 echo "Options:"
 echo "1 - Install everything"
 echo "2 - Select an extension to install"
@@ -7,16 +12,20 @@ echo "Choose an option: "
 read -r option
 
 if [[ $option = "1" ]]; then
-    echo "Install everything"
-    # @TODO
-    # Do a count to use in a for
-    # Use as parameters the number of strings in the extensions file
-    # ALL=$(extension1 extension2 extension3 ...)
-    # e.g code --install-extension $ALL
+    echo "Do you really want to install $LIST? (Y/y/N/n)"
+    read -r installAll
+    if [[ $installAll =  "Y" || "y" ]]; then
+        for i in $TRIM; do code --install-extension $i; done
+        echo "All set! Your extensions were installed."
+    fi
+    if [[ $installAll = "N" || "n" ]]; then
+        echo "Install all option cancelled."
+        exit
+    fi
 fi
 
 if [[ $option = "2" ]]; then
-    cat extensions
+    cat $EXTENSIONS
     sleep 1
     echo "Choose an extension: "
     read -r extensionSelect
