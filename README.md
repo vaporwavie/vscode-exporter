@@ -1,5 +1,5 @@
 # VSCode Extensions Exporter
-This tool will allow you to manage your listed extensions. You can choose for install all of them or just a specific one. The purpose of this tool is to help you to transfer your extensions from another VSCode to a new one, without having to search and install all of them.
+This tool will allow you to manage your listed extensions. You can choose to install all of them or just a specific one. The purpose of this tool is to help you to transfer your extensions from another VSCode to a new one, without having to search and install all of them.
 
 # Requirements
 ### VSCode Extensions List
