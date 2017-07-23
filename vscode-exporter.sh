@@ -2,7 +2,7 @@
 
 # Variables
 
-LIST=$(cat extensions)
+LIST='extensions'
 TRIM=$(tr "\t" "\n" < extensions)
 
 echo "Options:"
@@ -25,11 +25,11 @@ if [[ $option = "1" ]]; then
 fi
 
 if [[ $option = "2" ]]; then
-    cat $EXTENSIONS
+    cat $LIST
     sleep 1
     echo "Choose an extension: "
     read -r extensionSelect
-    HOOK=$(cat extensions | grep --color='auto' $extensionSelect) 
+    HOOK=$(cat $LIST | grep --color='auto' $extensionSelect) 
 
     echo "Install extension $HOOK? (Y/y/N/n)"
     read -r extensionConfirm
