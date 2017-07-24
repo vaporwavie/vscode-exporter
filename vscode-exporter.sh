@@ -18,10 +18,6 @@ if [[ $option = "1" ]]; then
         for i in $TRIM; do code --install-extension $i; done
         echo "All set! Your extensions were installed."
     fi
-    if [[ $installAll = "N" || "n" ]]; then
-        echo "Install all option cancelled."
-        exit
-    fi
 fi
 
 if [[ $option = "2" ]]; then
@@ -29,7 +25,7 @@ if [[ $option = "2" ]]; then
     sleep 1
     echo "Choose an extension: "
     read -r extensionSelect
-    HOOK=$(cat $LIST | grep --color='auto' $extensionSelect) 
+    HOOK=$(cat $LIST | grep --color='auto' $extensionSelect)
 
     echo "Install extension $HOOK? (Y/y/N/n)"
     read -r extensionConfirm
