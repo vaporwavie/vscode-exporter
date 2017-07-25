@@ -1,9 +1,20 @@
 #!/bin/bash
 
+# Argument
+EXTENSIONS_LIST=$1
+
+if [ ! $# -eq 1 ]; then
+    echo "Wrong usage."
+    echo "You must use it as ./vscode-exporter.sh /PATH/TO/EXTENSION-LIST"
+    exit 1
+fi
+
 # Variables
 
-LIST='extensions'
-TRIM=$(tr "\t" "\n" < extensions)
+LIST=$EXTENSIONS_LIST
+TRIM=$(tr "\t" "\n" < $EXTENSIONS_LIST)
+
+vscodeExporter() {
 
 echo "Options:"
 echo "1 - Install everything"
@@ -38,3 +49,7 @@ if [[ $option = "2" ]]; then
         exit
     fi
 fi
+
+}
+
+vscodeExporter
