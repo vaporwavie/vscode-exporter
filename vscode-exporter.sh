@@ -5,7 +5,7 @@ EXTENSIONS_LIST=$1
 
 if [ ! $# -eq 1 ]; then
     echo "Wrong usage."
-    echo "You must use it as ./vscode-exporter.sh /PATH/TO/EXTENSION-LIST"
+    echo "You must use it as bash vscode-exporter.sh /PATH/TO/EXTENSION-LIST"
     exit 1
 fi
 
