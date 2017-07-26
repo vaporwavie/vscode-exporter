@@ -4,15 +4,12 @@ Imagine that you're going to buy a new dev laptop, and you'll have to consequent
 # Requirements
 ### VSCode Extensions List
 
-You can do this easily by typing <code>code --list-extensions > extensions</code>
-
-**BEFORE ANYTHING:** For now, this tool will only parse a file named <code>extensions</code>. You'll have to put it inside the project's repository folder. Neverthless, I'm already thinking on a way to predict which file is the extensions list. 
+You can do this easily by typing <code>code --list-extensions > YOUR-FILE-NAME</code>
 
 # How to use it
 
 * Clone this repo
-* Copy your <code>extensions</code> file into the project's repository folder (as I early mentioned)
-* Execute it by typing <code>./vscode-exporter.sh</code>
+* Execute it by typing <code>./vscode-exporter.sh PATH/TO/EXTENSION-FILE</code>
 * Let the magic happen :smile:
 
 # License
